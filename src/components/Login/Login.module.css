@@ -1,0 +1,43 @@
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    min-width: 400px;
+    min-height: 320px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.title {
+    border-radius: 12px;
+    box-shadow: 0 2px 4px lightgrey;
+    padding: 5px 10px;
+    color: #0A3977;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding-top: 25px;
+    min-width: 100px;
+}
+
+@media(max-width: 576px){
+    .loginBlock{
+        min-width: 300px;
+        min-height: 300px;
+    }
+}

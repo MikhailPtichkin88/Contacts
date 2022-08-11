@@ -1,0 +1,55 @@
+.wrapper {
+    padding: 10px 0;
+    position: relative;
+}
+
+.deleteBtn {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.nameEdit,
+.emailEdit,
+.commentEdit {
+    position: relative;
+    display: inline-block;
+    padding: 0 35px 20px 40px;
+}
+
+.nameEdit::after,
+.emailEdit::after,
+.commentEdit::after {
+    position: absolute;
+    content: '';
+    top: calc(50% - 18px);
+    left: 7px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4648 1.09154C19.0743 0.701014 18.4411 0.701014 18.0506 1.09154C17.9516 1.19055 17.8015 1.21467 17.6708 1.16439C16.5979 0.751689 15.3358 0.977943 14.4706 1.84315L3.59661 12.7172C3.44041 12.8734 3.44041 13.1266 3.59662 13.2828L8.68778 18.374C8.84399 18.5302 9.09726 18.5302 9.25347 18.374L20.1274 7.5C20.9926 6.6348 21.2189 5.3726 20.8062 4.29977C20.7559 4.16907 20.78 4.01897 20.879 3.91997C21.2696 3.52944 21.2696 2.89628 20.879 2.50575L19.4648 1.09154ZM18.954 5.27925C19.1103 5.43546 19.1103 5.68872 18.954 5.84493L9.25347 15.5456C9.09726 15.7018 8.84399 15.7018 8.68778 15.5456L6.42504 13.2828C6.26883 13.1266 6.26883 12.8734 6.42504 12.7172L16.1256 3.01651C16.2818 2.8603 16.5351 2.8603 16.6913 3.01651L18.954 5.27925Z' fill='%231672EC'/%3E%3Cpath d='M0.675362 21.766C0.376756 21.8475 0.102765 21.5735 0.184213 21.2749L1.94032 14.8367C2.02114 14.5404 2.39192 14.4419 2.60908 14.6591L7.29086 19.3415C7.50801 19.5587 7.40954 19.9295 7.11324 20.0103L0.675362 21.766Z' fill='%231672EC'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.nameEdit:hover::after,
+.emailEdit:hover::after,
+.commentEdit:hover::after {
+    -webkit-transform: scale(1.1) translate(2px, -2px);
+    -moz-transform: scale(1.1) translate(2px, -2px);
+    -ms-transform: scale(1.1) translate(2px, -2px);
+    -o-transform: scale(1.1) translate(2px, -2px);
+    transform: scale(1.1) translate(2px, -2px);
+}
+

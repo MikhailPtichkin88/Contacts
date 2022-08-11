@@ -1,0 +1,16 @@
+.inner {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.contact {
+    padding: 10px;
+}
+
+@media (max-width: 991px) {
+    .inner {
+        grid-template-columns: 1fr;
+    }
+}

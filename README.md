@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Contacts test project with login page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+node version: 16.14.2
 
-## Available Scripts
+# Запуск приложения:
 
-In the project directory, you can run:
-
+В терминале выполнить следующие команды:
+### `yarn`
+Для подгрузки пакетов
+### `node server.js`
+Для запуска  сервера
 ### `yarn start`
+Для запуска самого приложения
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Функционал:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1. Страница логина:
+Необходимо ввести любое имя и пароль более одного символа, на которые моковый сервер вернет токен. Токен сохраняется в session storage и будет активен, пока не закрыть вкладку. При наличии активного токена будет автоматический редирект на страницу с контактами. Противном случае - на страницу логина.
+### 2. Страница контактов:
+При переходе на страницу контактов происходит автоматический запрос на сервер на подгрузку 20 контактов.
 
-### `yarn test`
+##### Любое поле любого контакта можно изменить по **_двойному_** (!) **_клику мышкой_**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+В начале списка находится форма для добавления нового контакта
 
-### `yarn build`
+В правом верхнем углу иконка для удаления контакта
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Находящаяся в хэдере форма поиска ищет на сервере все совпадения в полях email и comment(на сервере это body) и выводит все контакты, удовлетворяющие запрос. При отсутствии результата выводится форма с уведомлением и с кнопкой для подгрузки дефолтных контактов.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+=============================
+* Во всех формах реализована базовая валидация
+* Для улучшения визуализации и UX была использована библиотека Material-UI
+* Выполнена адаптация под разные разрешения экрана (до 375px)
+* Реализовано unit-тестирование
+* Стек технологий: React, Redux, TypeScript, react-redux, Redux Thunk, Axios, react-router-dom (v6.3.0)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
