@@ -2,17 +2,21 @@ import React, {ChangeEvent, FormEvent, useState} from 'react';
 import styles from './Login.module.css';
 import {loginUser} from "../../api/auth-api";
 import {Button, Paper, TextField} from "@mui/material";
+import {useNavigate} from "react-router-dom";
+import Contacts from "../Contacts";
 
 type LoginPropsType = {
     setToken: (userToken: { token: string }) => void
+    token: string
 }
 type ErrorType = null | 'nameError' | 'passwordError'
 
-export default function Login(props: LoginPropsType) {
+export default React.memo(function Login(props: LoginPropsType) {
 
     const [username, setUserName] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<ErrorType>(null)
+    const navigate = useNavigate()
 
     const onChangeUserNameHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setError(null)
@@ -36,6 +40,11 @@ export default function Login(props: LoginPropsType) {
             password
         });
         props.setToken(token);
+        navigate('/dashboard', {replace: true})
+    }
+
+    if (props.token) {
+        return <Contacts/>
     }
 
     return (
@@ -76,6 +85,6 @@ export default function Login(props: LoginPropsType) {
             </Paper>
         </div>
     )
-}
+})
 
 

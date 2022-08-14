@@ -2,6 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import {TextField} from "@mui/material";
 
 
+
 type EditableSpanPropsType = {
     title: string
     callback: (key: string, value: string) => void
@@ -15,6 +16,7 @@ export const EditableSpan = React.memo((props: EditableSpanPropsType) => {
     let [editMode, setEditMode] = useState(false)
     let [title, setTitle] = useState(props.title)
     let [error, setError] = useState(false)
+
 
     const setInputMode = () => {
         setEditMode(true)

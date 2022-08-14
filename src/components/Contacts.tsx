@@ -33,6 +33,7 @@ export default function Contacts() {
         })
     }, [contacts])
 
+
     return (
         <div className={styles.wrapper}>
             <Header/>
